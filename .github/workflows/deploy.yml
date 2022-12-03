@@ -9,7 +9,7 @@ jobs:
    steps: 
      - name: Deploy 
        env: 
-         ACCESS_TOKEN: ${{ secrets.TOKEN }
+         ACCESS_TOKEN: ${{ secrets.TOKEN }}
        run: |
          set -ex 
          git remote set-url origin https://oliveradk:${ACCESS_TOKEN}@github.com/oliveradk/oliveradk.github.io.git
