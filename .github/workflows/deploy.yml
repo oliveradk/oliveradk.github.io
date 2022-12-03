@@ -1,0 +1,16 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs: 
+  deploy:
+   runs-on: ubuntu-latest
+   steps: 
+     - name: Deploy 
+       env: 
+         ACCESS_TOKEN: ${{ secrets.TOKEN }
+       run: |
+         set -ex 
+         git remote set-url origin https://oliveradk:${ACCESS_TOKEN}@github.com/oliveradk/oliveradk.github.io.git
+         git push origin `git subtree split --prefix dist origin gh-pages
