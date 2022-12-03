@@ -12,5 +12,5 @@ jobs:
          ACCESS_TOKEN: ${{ secrets.TOKEN }}
        run: |
          set -ex 
-         git remote set-url origin https://oliveradk:${ACCESS_TOKEN}@github.com/oliveradk/oliveradk.github.io.git
+         git remote set-url origin https://oliveradk:${ACCESS_TOKEN}@github.com/oliveradk/oliveradk.github.io
          git push origin `git subtree split --prefix dist origin gh-pages
