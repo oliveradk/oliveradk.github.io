@@ -14,7 +14,7 @@ RUN gem update && gem install jekyll bundler
 
 # install gems
 WORKDIR "/tmp"
-COPY /src/Gemfile /src/Gemfile.lock ./
+COPY /dist/Gemfile /dist/Gemfile.lock ./
 RUN bundle install 
 RUN rm /tmp/Gemfile && rm /tmp/Gemfile.lock 
 
