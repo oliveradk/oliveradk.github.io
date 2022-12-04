@@ -1,13 +1,12 @@
-FROM alpine
+FROM ubuntu 
 
-RUN apk add --no-cache bash
+RUN apt-get update
 
-# ruby / jekyll and dependencies
-RUN apk add --no-cache ruby
-RUN apk add --no-cache ruby-dev 
-RUN apk add --no-cache build-base
-RUN apk add --no-cache make 
-RUN gem update && gem install jekyll bundler 
+# jekyll dependencies 
+RUN apt-get install -y ruby-full build-essential zlib1g-dev
+
+# instal jekyll 
+RUN gem install jekyll bundler
 
 # install gems
 WORKDIR "/tmp"
@@ -15,8 +14,6 @@ COPY /dist/Gemfile /dist/Gemfile.lock ./
 RUN bundle install 
 RUN rm /tmp/Gemfile && rm /tmp/Gemfile.lock 
 
-# install git
-RUN apk add git
-RUN apk add git-subtree
-
-EXPOSE 4000
+# developer tools
+RUN apt-get install -y git
+RUN apt-get install -y vim
