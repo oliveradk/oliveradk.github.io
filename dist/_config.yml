@@ -39,6 +39,5 @@ defaults:
     author_profile: true
 
 author:
-  name     : "Oliver Daniels-Koch"
   avatar   : "assets/images/prof.jpg"
 
