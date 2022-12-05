@@ -1,7 +1,7 @@
 main:
+  - title: "Blog"
+    url: /blog/
   - title: "Google Scholar"
     url: https://scholar.google.com/citations?hl=en&user=QWIkuesAAAAJ
   - title: "GitHub"
     url: https://github.com/oliveradk
-  - title: "Blog"
-    url: /blog/
