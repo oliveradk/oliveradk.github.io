@@ -1,9 +1,0 @@
-{
-    "build": { "dockerfile": "../Dockerfile"},
-    "containerEnv": {
-        "VSCODE_CONTAINER_GIT_USER": "${localEnv:VSCODE_CONTAINER_GIT_USER}",
-        "VSCODE_CONTAINER_GIT_EMAIL": "${localEnv:VSCODE_CONTAINER_GIT_EMAIL}"
-    },
-    "postStartCommand": "git config --global user.email $VSCODE_CONTAINER_GIT_EMAIL && git config --global user.name $VSCODE_CONTAINER_GIT_USER" 
-    
-}
